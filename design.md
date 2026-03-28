@@ -13,6 +13,17 @@ This document proposes a `@nomad` compute backend for Metaflow that executes dec
 
 The design follows the extension pattern used by `metaflow-slurm`, but replaces its SSH and `sbatch` control path with Nomad's HTTP API and allocation model. This is the central architectural shift: Slurm launches shell scripts on a remote login node, while Nomad accepts a jobspec, schedules an allocation, and exposes job state and logs through API endpoints.
 
+This document began as a forward-looking design note, but parts of it are now validated by a working local prototype. In particular, the following path has been verified on a local Nomad dev agent:
+
+- Metaflow loads and recognizes `@nomad`
+- a `@nomad` step is redirected to `nomad step`
+- the backend submits a Docker batch job to Nomad
+- Metaflow polls allocation state through backend code
+- allocation logs are surfaced in the Metaflow CLI
+- the remote step completes and the flow continues locally
+
+The prototype is still intentionally narrow and local-development-oriented, but it now validates the core scheduler integration path rather than only the underlying Nomad experiments.
+
 ## Goals
 
 ### Primary goals
@@ -222,6 +233,16 @@ For Docker tasks, the command should typically be:
 bash -lc "<metaflow bootstrap + step command + log handling>"
 ```
 
+### Prototype note: local development bootstrap
+
+The current working prototype supports a local-development path where the code package is staged in Metaflow's local datastore and then copied into the Docker task through a bind-mounted host path. To make that work reliably in a local Nomad dev setup, three details turned out to matter:
+
+- the Nomad client must allow Docker bind mounts
+- the task should run from a task-local working directory rather than rely on arbitrary container paths
+- the example image may need a small amount of runtime dependency installation before Metaflow starts
+
+These are acceptable for proof-of-work, but a fuller implementation should replace ad hoc runtime setup with a cleaner image and packaging strategy.
+
 ### Environment variables to propagate
 
 The Nomad task environment should include the same core Metaflow runtime variables currently propagated by `metaflow-slurm`, including:
@@ -243,6 +264,12 @@ Plus Nomad-specific markers such as:
 - `METAFLOW_NOMAD_NAMESPACE`
 
 This enables consistent runtime behavior and metadata collection.
+
+For the current local prototype, an additional implementation detail is important:
+
+- when the datastore is `local`, the remote task should use `METAFLOW_DEFAULT_METADATA=local`
+
+This keeps the local-dev execution path aligned with datastore-backed metadata sync instead of assuming a separately configured Metaflow metadata service inside the Docker task.
 
 ## Nomad Client Layer
 
@@ -320,6 +347,8 @@ This matches the local experiments already performed:
 - failing tasks expose the non-zero exit code and logs
 - retry behavior can create multiple allocations, so the backend must decide which allocation's logs to surface for the active attempt
 
+The current prototype also validates a stronger claim than the earlier HCL-only tests: allocation logs can be shown back through the Metaflow CLI during a real `@nomad` step execution, not just by manual `nomad alloc logs` inspection.
+
 ## Retry Semantics
 
 This is the most important design constraint beyond basic job submission.
@@ -381,6 +410,17 @@ The testing plan should combine unit and integration coverage.
 
 The integration environment can initially target a local Nomad dev agent with the Docker driver enabled.
 
+### Validation already completed locally
+
+The following has already been validated manually in the current proof-of-work implementation:
+
+- Nomad Docker batch job submission through backend code
+- allocation polling and terminal-state handling
+- log retrieval for successful and failing tasks
+- a full Metaflow flow where the `start` step runs remotely under `@nomad` and the `end` step continues locally after successful completion
+
+This means the next testing work is less about proving basic feasibility and more about making the behavior cleaner, more portable, and better covered by automated tests.
+
 ## MVP Deliverables
 
 1. `@nomad` step decorator
@@ -436,7 +476,7 @@ Risk:
 The Docker image may not contain the tools needed to bootstrap and run the Metaflow step.
 
 Mitigation:
-Start with a documented reference image and keep the bootstrap logic close to existing Metaflow remote backends.
+Start with a documented reference image and keep the bootstrap logic close to existing Metaflow remote backends. The current prototype solved this narrowly by installing a small runtime dependency set inside the task, but the full project should move toward cleaner image-based dependency management.
 
 ## Why This Scope Is Correct
 
