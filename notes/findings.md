@@ -6,6 +6,7 @@ This document summarizes the local Nomad experiments used to validate the propos
 
 - Nomad dev agent running locally
 - Docker driver enabled through Docker Desktop + WSL
+- Docker bind mounts enabled for local datastore development
 - Test image: `python:3.11-slim`
 - Resource shape used in all jobs:
   - `cpu = 500`
@@ -127,6 +128,54 @@ This is the preferred MVP failure behavior because it keeps the mapping simple:
 
 That makes retry handling much easier to integrate cleanly with Metaflow `@retry`.
 
+## 5. End-to-End Metaflow `@nomad` Prototype Run
+
+Prototype path: `metaflow-nomad/examples/hello_nomad_flow.py`
+
+### Purpose
+
+Validate that the integration works above the scheduler level, not just through standalone HCL jobs or helper scripts.
+
+Specifically, this test checks that:
+
+- Metaflow recognizes and loads the `@nomad` decorator
+- a decorated step is redirected to the Nomad backend
+- the backend submits the task as a Nomad Docker job
+- Metaflow polls allocation state through backend code
+- allocation logs are shown back in the Metaflow CLI
+- the remote step returns terminal success and the flow continues locally
+
+### Result
+
+- The `start` step of `HelloNomadFlow` ran remotely on a local Nomad dev cluster.
+- Metaflow displayed the remote Nomad step as pending and then streamed task logs.
+- The remote step printed `hello from @nomad`.
+- The Nomad-backed task finished with `exit code 0`.
+- The flow continued to the local `end` step, which printed `done`.
+- The full flow completed successfully.
+
+### Key Finding
+
+The project is now beyond scheduler-only experiments. The current prototype demonstrates a real end-to-end Metaflow execution path through Nomad for a local development setup.
+
+### Important implementation notes from this run
+
+- The local-dev path currently relies on Docker bind mounts so the Nomad task can access the local Metaflow datastore.
+- The working directory inside the container should be task-local rather than an arbitrary absolute path.
+- The example image needed a small runtime dependency install (`requests`) before Metaflow startup.
+- For this local path, using local metadata inside the container is more reliable than assuming a configured metadata service.
+
+### Implication for `@nomad`
+
+This is the strongest proof-of-work result so far because it validates the actual backend shape that the project needs:
+
+- decorator wiring
+- jobspec generation
+- Nomad API submission
+- allocation polling
+- log retrieval
+- terminal success propagation back to Metaflow
+
 ## Cross-Test Conclusions
 
 ### Submission and monitoring
@@ -144,6 +193,18 @@ Nomad surfaces non-zero container exits clearly in task events. This is sufficie
 ### Retry semantics
 
 The most important design constraint is that Nomad has more than one retry-related mechanism. A backend that wants Metaflow to own retries must explicitly disable hidden scheduler retries when appropriate.
+
+### End-to-end backend viability
+
+The local prototype now proves that the Nomad backend can be integrated into Metaflow's execution flow and not only exercised through raw Nomad CLI commands. This reduces uncertainty around the core project direction significantly.
+
+### Local development constraints
+
+The current proof-of-work path is valid for local development, but it also revealed a few practical constraints:
+
+- local datastore support in Docker tasks depends on bind mounts being enabled in the Nomad Docker driver
+- a plain base image may still need some runtime dependencies for Metaflow startup
+- prototype-grade metadata handling can work for local validation, but a fuller implementation should make metadata and environment behavior more robust
 
 ### Test hygiene
 
@@ -163,3 +224,4 @@ For the initial `@nomad` implementation:
 - retrieve logs from allocation APIs
 - disable scheduler-level retry behavior by default for Metaflow-managed attempts
 - let Metaflow `@retry` own visible retry behavior
+- treat the current local end-to-end run as proof of feasibility, while improving image/dependency handling and automated tests in the next phase
