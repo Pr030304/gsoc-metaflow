@@ -165,13 +165,4 @@ Expected failure output includes:
 [Nomad] Final status: failed
 [Nomad] Exit code: 2
 ```
-
-## What this prototype is useful for
-
-This repository is useful as:
-
-- proof of technical preparation for the GSoC Metaflow Nomad Integration project
-- a concrete reference for mapping Metaflow step execution to Nomad batch jobs
-- a small experimental backend for understanding Nomad retry, allocation, and log semantics
-
-It should not yet be presented as a finished community extension. It is a working prototype that proves the core remote execution path and informs the design of a fuller `@nomad` backend.
+It is not yet a  fully finished community extension. It is a working prototype that proves the core remote execution path and informs the design of a fuller `@nomad` backend.
