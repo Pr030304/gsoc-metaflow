@@ -1,0 +1,6 @@
+[MFLOG|0|2026-03-28T14:30:10.924405Z|runtime|dc08f94b-cb20-42d5-b2f1-be8e5d7a7988][pranjali-HelloNomadFlow-1774708205316344-start-1-0] Task is starting (pending)...
+[MFLOG|0|2026-03-28T14:30:19.266831Z|runtime|3940282e-0c8a-4856-9b7e-063cb1f69e4d][pranjali-HelloNomadFlow-1774708205316344-start-1-0] WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[MFLOG|0|2026-03-28T14:30:20.326740Z|runtime|14f76a58-2ae2-4789-a3c3-bca3d11e7cfa][pranjali-HelloNomadFlow-1774708205316344-start-1-0] 
+[MFLOG|0|2026-03-28T14:30:27.943617Z|runtime|5359a543-7e2c-4833-a46b-b927ceac3916][pranjali-HelloNomadFlow-1774708205316344-start-1-0] [notice] A new release of pip is available: 24.0 -> 26.0.1
+[MFLOG|0|2026-03-28T14:30:27.944544Z|runtime|0bbc7302-7402-40c9-a6b3-7b3c66b55ce5][pranjali-HelloNomadFlow-1774708205316344-start-1-0] [notice] To update, run: pip install --upgrade pip
+[MFLOG|0|2026-03-28T14:30:27.945483Z|runtime|d670384b-d5cf-4e1a-8664-f6b6fbbba977][pranjali-HelloNomadFlow-1774708205316344-start-1-0] Task finished with exit code 0.

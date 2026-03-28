@@ -1,0 +1,6 @@
+[MFLOG|0|2026-03-28T11:29:29.033584Z|runtime|02e344e2-be34-4fa0-9710-36a61dd5dc29][pranjali-HelloNomadFlow-1774697362461366-start-1-0] Task is starting (pending)...
+[MFLOG|0|2026-03-28T11:29:34.437389Z|runtime|18adf44d-0f1f-45b5-a848-06b0004dd141]Skipping local metadata sync for @nomad step: No completed attempts of the task was found for task 'HelloNomadFlow/1774697362461366/start/1'
+[MFLOG|0|2026-03-28T11:29:34.437890Z|runtime|909dba1f-06f3-46c4-bf37-277082266b17]    Nomad error:
+[MFLOG|0|2026-03-28T11:29:34.623405Z|runtime|e30f6a9d-39ed-4fb0-9295-f71957ab5f0f]    GET /v1/client/fs/logs/64bada72-8243-7f35-ad38-ff6282fd8dc4 failed with 404: task "step" not started yet. No logs available
+[MFLOG|0|2026-03-28T11:29:34.623727Z|runtime|683882bc-70ef-4033-b087-56941ac15201]
+[MFLOG|0|2026-03-28T11:29:34.686983Z|runtime|208e34a1-0d86-411d-b77f-c77055c66666]Task failed.

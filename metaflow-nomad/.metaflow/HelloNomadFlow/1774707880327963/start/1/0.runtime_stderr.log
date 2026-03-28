@@ -1,0 +1,74 @@
+[MFLOG|0|2026-03-28T14:24:45.715700Z|runtime|fd6ccbe1-4c1d-41ec-b5c9-02a7c131d0b3][pranjali-HelloNomadFlow-1774707880327963-start-1-0] Task is starting (pending)...
+[MFLOG|0|2026-03-28T14:24:56.049991Z|runtime|5e8e7451-0086-4bf6-bc33-d229418b8491][pranjali-HelloNomadFlow-1774707880327963-start-1-0] Task is starting (pending)...
+[MFLOG|0|2026-03-28T14:25:06.362063Z|runtime|3e755c03-3ec7-4eab-9711-3157a00d6e94][pranjali-HelloNomadFlow-1774707880327963-start-1-0] Task is starting (pending)...
+[MFLOG|0|2026-03-28T14:25:16.492791Z|runtime|32544550-c4a3-496b-a862-d7fd7c179140][pranjali-HelloNomadFlow-1774707880327963-start-1-0] Traceback (most recent call last):
+[MFLOG|0|2026-03-28T14:25:16.497609Z|runtime|8a745e81-4f71-4d05-818d-70be3b476d1e][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "/local/metaflow/.mf_code/metaflow/extension_support/plugins.py", line 99, in get_plugin
+[MFLOG|0|2026-03-28T14:25:16.498796Z|runtime|2a2e4ef7-12ac-498f-90dd-55ddd0417d7d][pranjali-HelloNomadFlow-1774707880327963-start-1-0]     plugin_module = importlib.import_module(path)
+[MFLOG|0|2026-03-28T14:25:16.499251Z|runtime|7eb259bf-2cac-41cf-a66f-ff283244fdc4][pranjali-HelloNomadFlow-1774707880327963-start-1-0]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2026-03-28T14:25:16.499480Z|runtime|5f66182b-eca9-4dd6-a17a-b9c2e5c116c0][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
+[MFLOG|0|2026-03-28T14:25:16.499799Z|runtime|f51d9411-7054-45a5-841d-a58b85b7b7a3][pranjali-HelloNomadFlow-1774707880327963-start-1-0]     return _bootstrap._gcd_import(name[level:], package, level)
+[MFLOG|0|2026-03-28T14:25:16.499983Z|runtime|e7493a4e-43fe-4f65-b45d-d8d0d6683a0a][pranjali-HelloNomadFlow-1774707880327963-start-1-0]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2026-03-28T14:25:16.500151Z|runtime|c29564fc-920b-4b28-93eb-5f7fb6dfb060][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+[MFLOG|0|2026-03-28T14:25:16.500669Z|runtime|487a39d6-5437-4692-97c9-74c44285881f][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+[MFLOG|0|2026-03-28T14:25:16.500929Z|runtime|a4ac476d-d7bb-47c9-9ffa-542db650964e][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+[MFLOG|0|2026-03-28T14:25:16.501134Z|runtime|ad313bab-dbf5-42a3-8d5a-465130e719fa][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+[MFLOG|0|2026-03-28T14:25:16.501313Z|runtime|a9a07191-bfc3-4b8a-ba9a-09d165189600][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+[MFLOG|0|2026-03-28T14:25:16.501497Z|runtime|106f4674-a49e-473a-99cc-04bbfab1fb09][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+[MFLOG|0|2026-03-28T14:25:16.501583Z|runtime|61bb3a9e-4f9d-4889-bcb5-802efa4cbd20][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "/local/metaflow/.mf_code/metaflow/plugins/metadata_providers/service.py", line 5, in <module>
+[MFLOG|0|2026-03-28T14:25:16.501752Z|runtime|97207c6c-2e74-438c-a92d-dcc635f8b3bc][pranjali-HelloNomadFlow-1774707880327963-start-1-0]     import requests
+[MFLOG|0|2026-03-28T14:25:16.501832Z|runtime|5d2e1032-d437-4b18-9996-e03c3eab857f][pranjali-HelloNomadFlow-1774707880327963-start-1-0] ModuleNotFoundError: No module named 'requests'
+[MFLOG|0|2026-03-28T14:25:16.502007Z|runtime|f3c62ccd-d9a3-4abe-b6e6-607045ff8833][pranjali-HelloNomadFlow-1774707880327963-start-1-0] 
+[MFLOG|0|2026-03-28T14:25:16.502154Z|runtime|86d25a2d-9511-413e-8bf4-4e06b91658df][pranjali-HelloNomadFlow-1774707880327963-start-1-0] The above exception was the direct cause of the following exception:
+[MFLOG|0|2026-03-28T14:25:16.502346Z|runtime|22349675-3b6d-4b87-a73a-c9fff65af3d8][pranjali-HelloNomadFlow-1774707880327963-start-1-0] 
+[MFLOG|0|2026-03-28T14:25:16.502523Z|runtime|0c1f1fb6-70da-4b34-b73e-5d6e7d5b735c][pranjali-HelloNomadFlow-1774707880327963-start-1-0] Traceback (most recent call last):
+[MFLOG|0|2026-03-28T14:25:16.502669Z|runtime|e805e699-765b-4e60-9b71-fed247b1e2ce][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "<frozen runpy>", line 189, in _run_module_as_main
+[MFLOG|0|2026-03-28T14:25:16.502779Z|runtime|cc11f870-1dac-4478-b2f1-ed9cb319e246][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "<frozen runpy>", line 112, in _get_module_details
+[MFLOG|0|2026-03-28T14:25:16.502948Z|runtime|85a99c4f-44c3-4903-81a7-d5229291f6be][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "/local/metaflow/.mf_code/metaflow/__init__.py", line 120, in <module>
+[MFLOG|0|2026-03-28T14:25:16.503076Z|runtime|92dc8e7a-9763-4e93-9216-7f51aa15aac1][pranjali-HelloNomadFlow-1774707880327963-start-1-0]     from .plugins.datatools import S3
+[MFLOG|0|2026-03-28T14:25:16.503262Z|runtime|9de25e98-a25a-43f6-b972-b28542d4b3ad][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "/local/metaflow/.mf_code/metaflow/plugins/__init__.py", line 204, in <module>
+[MFLOG|0|2026-03-28T14:25:16.503440Z|runtime|1dcd3281-5872-4f6f-9354-59e27abaf4e5][pranjali-HelloNomadFlow-1774707880327963-start-1-0]     METADATA_PROVIDERS = resolve_plugins("metadata_provider")
+[MFLOG|0|2026-03-28T14:25:16.503589Z|runtime|1e591d1a-8dfc-49f3-8b1a-75bd6eced291][pranjali-HelloNomadFlow-1774707880327963-start-1-0]                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2026-03-28T14:25:16.503761Z|runtime|0767c950-2030-4c66-8ac5-6eb1b5aa54c8][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "/local/metaflow/.mf_code/metaflow/extension_support/plugins.py", line 164, in resolve_plugins
+[MFLOG|0|2026-03-28T14:25:16.503947Z|runtime|7b7d0f6d-863b-462b-b1fb-b1907e6e13da][pranjali-HelloNomadFlow-1774707880327963-start-1-0]     to_return.append(get_plugin(category, class_path, name))
+[MFLOG|0|2026-03-28T14:25:16.504230Z|runtime|9215ff22-09d3-4ef0-902c-b7404c3a9bde][pranjali-HelloNomadFlow-1774707880327963-start-1-0]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2026-03-28T14:25:16.506117Z|runtime|62bcea2e-621c-47dd-b6a2-84a8eee21cb1][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "/local/metaflow/.mf_code/metaflow/extension_support/plugins.py", line 101, in get_plugin
+[MFLOG|0|2026-03-28T14:25:16.506784Z|runtime|03253721-2ebd-4b62-9937-739d915e8a18][pranjali-HelloNomadFlow-1774707880327963-start-1-0]     raise ValueError(
+[MFLOG|0|2026-03-28T14:25:16.506927Z|runtime|d6a1f3ab-04ef-4202-b177-78754d748584][pranjali-HelloNomadFlow-1774707880327963-start-1-0] ValueError: Cannot locate metadata_provider plugin 'service' at 'metaflow.plugins.metadata_providers.service'
+[MFLOG|0|2026-03-28T14:25:16.507105Z|runtime|f93fc741-0ad4-460f-ba9b-4acc03e4b258][pranjali-HelloNomadFlow-1774707880327963-start-1-0] Traceback (most recent call last):
+[MFLOG|0|2026-03-28T14:25:16.507258Z|runtime|437511a2-7ee9-484b-acc3-8828df843040][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "/local/metaflow/.mf_code/metaflow/extension_support/plugins.py", line 99, in get_plugin
+[MFLOG|0|2026-03-28T14:25:16.507489Z|runtime|0821e473-add0-4961-9ba0-969234e5b559][pranjali-HelloNomadFlow-1774707880327963-start-1-0]     plugin_module = importlib.import_module(path)
+[MFLOG|0|2026-03-28T14:25:16.508046Z|runtime|abe76c90-4238-4acf-a3aa-a5c37f3197e5][pranjali-HelloNomadFlow-1774707880327963-start-1-0]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2026-03-28T14:25:16.509011Z|runtime|a73fbb9f-67ba-4ed4-8a1b-7a956abed320][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
+[MFLOG|0|2026-03-28T14:25:16.509828Z|runtime|b9bd395e-c510-44d1-8a84-048194547210][pranjali-HelloNomadFlow-1774707880327963-start-1-0]     return _bootstrap._gcd_import(name[level:], package, level)
+[MFLOG|0|2026-03-28T14:25:16.510054Z|runtime|6957d030-c06b-49d2-a44b-656e0bda8e3c][pranjali-HelloNomadFlow-1774707880327963-start-1-0]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2026-03-28T14:25:16.510240Z|runtime|3ca93297-27a5-49af-b673-bba423fad000][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+[MFLOG|0|2026-03-28T14:25:16.510383Z|runtime|4aa72c1f-ee71-401d-b721-6af27d1e29db][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+[MFLOG|0|2026-03-28T14:25:16.510502Z|runtime|ac21496d-e90c-45e4-b6d6-0993bc9c9cab][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+[MFLOG|0|2026-03-28T14:25:17.647386Z|runtime|b51e8439-6af4-4e06-a223-da90d19351fb][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+[MFLOG|0|2026-03-28T14:25:17.648148Z|runtime|dd73151d-3c40-47bf-9ac6-2ec0954f483f][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+[MFLOG|0|2026-03-28T14:25:17.648560Z|runtime|23a61201-fa38-46a8-93a1-d48c79c3a016][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+[MFLOG|0|2026-03-28T14:25:17.648857Z|runtime|396f7746-d6dc-4e67-bca1-2628a10d38af][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "/local/metaflow/.mf_code/metaflow/plugins/metadata_providers/service.py", line 5, in <module>
+[MFLOG|0|2026-03-28T14:25:17.649218Z|runtime|91443009-f6fc-4e58-875b-828f3df33926][pranjali-HelloNomadFlow-1774707880327963-start-1-0]     import requests
+[MFLOG|0|2026-03-28T14:25:17.649686Z|runtime|ae88edb8-0f58-49f5-84a4-d270121e5af9][pranjali-HelloNomadFlow-1774707880327963-start-1-0] ModuleNotFoundError: No module named 'requests'
+[MFLOG|0|2026-03-28T14:25:17.650059Z|runtime|9086ded0-2a8b-4041-91dc-bf4fa114c54c][pranjali-HelloNomadFlow-1774707880327963-start-1-0] 
+[MFLOG|0|2026-03-28T14:25:17.650453Z|runtime|1972e9dc-8dc7-4591-be46-2ff026f58f65][pranjali-HelloNomadFlow-1774707880327963-start-1-0] The above exception was the direct cause of the following exception:
+[MFLOG|0|2026-03-28T14:25:17.650733Z|runtime|81b4e196-292d-4e1a-9ada-1582e20e1144][pranjali-HelloNomadFlow-1774707880327963-start-1-0] 
+[MFLOG|0|2026-03-28T14:25:17.650971Z|runtime|5c2b313b-3605-487b-8efc-fd008a4cd8e4][pranjali-HelloNomadFlow-1774707880327963-start-1-0] Traceback (most recent call last):
+[MFLOG|0|2026-03-28T14:25:17.651256Z|runtime|3c3ebb1c-527f-4838-8dc6-fa216482b2b1][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "<frozen runpy>", line 189, in _run_module_as_main
+[MFLOG|0|2026-03-28T14:25:17.651489Z|runtime|bba14435-b936-4e15-8da5-8700f9281321][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "<frozen runpy>", line 112, in _get_module_details
+[MFLOG|0|2026-03-28T14:25:17.651679Z|runtime|8e850dbe-d07c-485f-996e-a0ef207ff093][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "/local/metaflow/.mf_code/metaflow/__init__.py", line 120, in <module>
+[MFLOG|0|2026-03-28T14:25:17.651916Z|runtime|e54158c6-d968-41a7-9bb8-21c77911cf76][pranjali-HelloNomadFlow-1774707880327963-start-1-0]     from .plugins.datatools import S3
+[MFLOG|0|2026-03-28T14:25:17.652164Z|runtime|acd8e232-ba04-4917-b8da-91ef5b165bfc][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "/local/metaflow/.mf_code/metaflow/plugins/__init__.py", line 204, in <module>
+[MFLOG|0|2026-03-28T14:25:17.652455Z|runtime|fce3ecf0-43aa-4ed3-8aec-52b2ebb815aa][pranjali-HelloNomadFlow-1774707880327963-start-1-0]     METADATA_PROVIDERS = resolve_plugins("metadata_provider")
+[MFLOG|0|2026-03-28T14:25:17.652690Z|runtime|dab01532-8dfc-461c-97bd-fd00fb453ec6][pranjali-HelloNomadFlow-1774707880327963-start-1-0]                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2026-03-28T14:25:17.652981Z|runtime|2851bf63-593a-4fa1-8299-a7f0d2cb6afd][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "/local/metaflow/.mf_code/metaflow/extension_support/plugins.py", line 164, in resolve_plugins
+[MFLOG|0|2026-03-28T14:25:17.653208Z|runtime|4b7d5998-d856-4306-b131-2e0daf60a5f1][pranjali-HelloNomadFlow-1774707880327963-start-1-0]     to_return.append(get_plugin(category, class_path, name))
+[MFLOG|0|2026-03-28T14:25:17.653492Z|runtime|503ba0fb-3a86-4c65-ad81-1801af7c6a08][pranjali-HelloNomadFlow-1774707880327963-start-1-0]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2026-03-28T14:25:17.653824Z|runtime|0ecea852-4ffb-4817-a942-b19df4b6946c][pranjali-HelloNomadFlow-1774707880327963-start-1-0]   File "/local/metaflow/.mf_code/metaflow/extension_support/plugins.py", line 101, in get_plugin
+[MFLOG|0|2026-03-28T14:25:17.654149Z|runtime|4df5b34f-35a8-4b02-84ba-fd7c5ae5ee4f][pranjali-HelloNomadFlow-1774707880327963-start-1-0]     raise ValueError(
+[MFLOG|0|2026-03-28T14:25:17.654535Z|runtime|06b5c135-e407-444c-8af2-4d6722d8a0ab][pranjali-HelloNomadFlow-1774707880327963-start-1-0] ValueError: Cannot locate metadata_provider plugin 'service' at 'metaflow.plugins.metadata_providers.service'
+[MFLOG|0|2026-03-28T14:25:17.654816Z|runtime|d7637889-419d-4788-9d43-4f5f139a98fd]Skipping local metadata sync for @nomad step: No completed attempts of the task was found for task 'HelloNomadFlow/1774707880327963/start/1'
+[MFLOG|0|2026-03-28T14:25:17.865007Z|runtime|f8cf2d6d-e602-4434-a008-6df310bcf703]    Nomad error:
+[MFLOG|0|2026-03-28T14:25:17.865993Z|runtime|53a732b1-7a59-4ac5-9e5d-d670f6ab12c3]    Exit Code: 1, Exit Message: "Docker container exited with non-zero exit code: 1" (exit code 1) This could be a transient error. Use @retry to retry.
+[MFLOG|0|2026-03-28T14:25:17.866220Z|runtime|9a175bd8-2419-41cb-8f4d-a5dbd86066ca]
+[MFLOG|0|2026-03-28T14:25:17.939655Z|runtime|e756b616-7848-4d56-89cb-7cd2f77e8819]Task failed.

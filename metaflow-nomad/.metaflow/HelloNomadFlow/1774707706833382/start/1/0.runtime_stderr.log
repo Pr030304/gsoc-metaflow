@@ -1,0 +1,10 @@
+[MFLOG|0|2026-03-28T14:21:52.307834Z|runtime|af252fcd-6961-46d3-9c54-28659ec41340][pranjali-HelloNomadFlow-1774707706833382-start-1-0] Task is starting (pending)...
+[MFLOG|0|2026-03-28T14:21:57.601632Z|runtime|05a93dc4-db1c-4416-b241-48ed77636711]Skipping local metadata sync for @nomad step: No completed attempts of the task was found for task 'HelloNomadFlow/1774707706833382/start/1'
+[MFLOG|0|2026-03-28T14:21:57.602236Z|runtime|8f17f44b-9626-4b0b-8bb1-0c7eb666e782]    Nomad error:
+[MFLOG|0|2026-03-28T14:21:57.738282Z|runtime|d9ee49ae-6fb8-4169-8ef5-ca36ad1bf6b6]    2 errors occurred:
+[MFLOG|0|2026-03-28T14:21:57.738549Z|runtime|d3724d26-6cd5-4a8e-bd0f-1e218ab2fb53]    	 failed to parse config: 
+[MFLOG|0|2026-03-28T14:21:57.738667Z|runtime|1c257fdc-ef78-4b8d-a8c2-b34e1dbf14aa]    	 Extra characters after interpolation expression: Template interpolation doesn't expect a colon at this location. Did you intend this to be a literal sequence to be processed as part of another language? If so, you can escape it by starting with "$${" instead of just "${".
+[MFLOG|0|2026-03-28T14:21:57.738808Z|runtime|48656988-2d9d-4df7-aff5-ca7fdb5e6b5c]    
+[MFLOG|0|2026-03-28T14:21:57.738888Z|runtime|61a4cb7d-bf6c-4161-a6cf-bc6c2f2a4fa8]     This could be a transient error. Use @retry to retry.
+[MFLOG|0|2026-03-28T14:21:57.738988Z|runtime|91d9b345-08b5-4efa-aeca-8043f4bcb560]
+[MFLOG|0|2026-03-28T14:21:57.794818Z|runtime|e7182d1b-5f4e-46c2-bd34-4589978cc15b]Task failed.

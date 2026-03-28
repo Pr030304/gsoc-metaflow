@@ -1,0 +1,18 @@
+[MFLOG|0|2026-03-28T14:18:55.156440Z|runtime|3251544a-5cf0-49a3-a2be-52362c4f1e63][pranjali-HelloNomadFlow-1774707528994801-start-1-0] Task is starting (pending)...
+[MFLOG|0|2026-03-28T14:19:00.442321Z|runtime|a842a952-472a-4452-97c5-22b8509a8915]Skipping local metadata sync for @nomad step: No completed attempts of the task was found for task 'HelloNomadFlow/1774707528994801/start/1'
+[MFLOG|0|2026-03-28T14:19:00.443283Z|runtime|c9483f95-5580-42a8-a4b9-7194f3ce454a]    Nomad error:
+[MFLOG|0|2026-03-28T14:19:00.604579Z|runtime|442021e9-5471-4404-8772-e0bec47b7421]    10 errors occurred:
+[MFLOG|0|2026-03-28T14:19:00.604883Z|runtime|7660242b-ebb7-4fe6-9a78-1f592c9a9d8e]    	 failed to parse config: 
+[MFLOG|0|2026-03-28T14:19:00.605003Z|runtime|56a61145-fb11-4765-b073-d3ce9f139cfd]    	 Invalid character: This character is not used within the language.
+[MFLOG|0|2026-03-28T14:19:00.605110Z|runtime|e508de20-1db4-4a02-8aa8-65508cd3896b]    	 Invalid character: This character is not used within the language.
+[MFLOG|0|2026-03-28T14:19:00.605214Z|runtime|fa6d0424-2983-4ae9-b910-9bafc2813657]    	 Invalid character: This character is not used within the language.
+[MFLOG|0|2026-03-28T14:19:00.605315Z|runtime|86dec576-0056-44dc-a260-5d310ea44514]    	 Invalid character: This character is not used within the language.
+[MFLOG|0|2026-03-28T14:19:00.605380Z|runtime|08d2ffe9-c1bf-4aaa-8392-76345c209e90]    	 Invalid character: This character is not used within the language.
+[MFLOG|0|2026-03-28T14:19:00.605492Z|runtime|fd28ba62-3b64-4c2d-bbe8-16e810958617]    	 Invalid character: This character is not used within the language.
+[MFLOG|0|2026-03-28T14:19:00.605620Z|runtime|9ea435aa-f493-45ce-8bbe-24ff1eb49549]    	 Invalid character: This character is not used within the language.
+[MFLOG|0|2026-03-28T14:19:00.605696Z|runtime|fca42c59-19f7-473b-85ed-3256e246d2c2]    	 Invalid character: This character is not used within the language.
+[MFLOG|0|2026-03-28T14:19:00.605815Z|runtime|c8a794e3-a63c-4fc4-bf84-9ef1a7d10611]    	 Extra characters after interpolation expression: Template interpolation doesn't expect a colon at this location. Did you intend this to be a literal sequence to be processed as part of another language? If so, you can escape it by starting with "$${" instead of just "${".
+[MFLOG|0|2026-03-28T14:19:00.606056Z|runtime|cef91324-fefd-45c2-900d-33a504b34c01]    
+[MFLOG|0|2026-03-28T14:19:00.606296Z|runtime|28c1c1a6-15a8-4342-91aa-782dd8ddb40e]     This could be a transient error. Use @retry to retry.
+[MFLOG|0|2026-03-28T14:19:00.606528Z|runtime|740f1dd4-8744-408f-ae7b-12eb7540756b]
+[MFLOG|0|2026-03-28T14:19:00.654307Z|runtime|40a4a0da-9bdf-41e7-a007-4c1bb3626cc0]Task failed.

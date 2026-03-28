@@ -1,0 +1,6 @@
+[MFLOG|0|2026-03-28T11:31:49.017012Z|runtime|9b61b031-ca79-40fd-9c26-c8103c9411a7][pranjali-HelloNomadFlow-1774697502704636-start-1-0] Task is starting (pending)...
+[MFLOG|0|2026-03-28T11:31:54.377553Z|runtime|408c1caa-9e36-4759-b9a8-28fb3424105b]Skipping local metadata sync for @nomad step: No completed attempts of the task was found for task 'HelloNomadFlow/1774697502704636/start/1'
+[MFLOG|0|2026-03-28T11:31:54.377962Z|runtime|4ba35a3d-12ea-4dad-9f38-ed9f4e7db55b]    Nomad error:
+[MFLOG|0|2026-03-28T11:31:54.509020Z|runtime|07a20195-9b47-497b-ab6f-b8f5d936e82b]    Policy allows no restarts (exit code 0) This could be a transient error. Use @retry to retry.
+[MFLOG|0|2026-03-28T11:31:54.509304Z|runtime|3ade0e4e-1eb5-4116-91f7-444c71695818]
+[MFLOG|0|2026-03-28T11:31:54.569703Z|runtime|7e0a9b01-def0-48f6-829d-ce866223ef9a]Task failed.
